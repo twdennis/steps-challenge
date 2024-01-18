@@ -10,7 +10,6 @@ export default function App() {
   return (
     <div>
       <Steps />
-      <Steps />
     </div>
   );
 }
@@ -47,13 +46,21 @@ function Steps() {
           </p>
           <div className="buttons">
             <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              style={
+                step === 1
+                  ? { backgroundColor: "grey", color: "darkgray" }
+                  : { backgroundColor: "#7950f2", color: "#fff" }
+              }
               onClick={handlePrevious}
             >
               Previous
             </button>
             <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              style={
+                step < 3
+                  ? { backgroundColor: "#7950f2", color: "#fff" }
+                  : { backgroundColor: "grey", color: "darkgray" }
+              }
               onClick={handleNext}
             >
               Next
